@@ -10,6 +10,123 @@
 	<link rel="stylesheet" href="common.css" />
 	<script src="jquery-1.12.4/jquery.min.js"></script>
 </head>
-<body>	
+<body>
+	<div class="mapCon">
+	    <div class="wave wave1"></div>
+	    <div class="wave wave2"></div>
+	    <div class="wave wave3"></div>
+	    <div class="mapPoint"></div>
+	</div>
+            
+	<style>
+		.mapCon {
+			height: 240px;
+			position: absolute;
+			top: 0;
+			z-index: 0;	
+		}
+		.wave {
+			position: absolute;
+			top: 198px;
+			left: 772px;
+			width: 0;
+			height: 0;
+			opacity: 0;
+			margin-left: 0;
+			border-radius: 50% 50%;
+			background-color: #ff736a;
+			border: 0 solid #f59a94;	
+		}
+		.wave.wave1 {
+			animation: water 6s linear 0s infinite;
+			-moz-animation: water 6s linear 0s infinite;
+			-webkit-animation: water 6s linear 0s infinite;
+			-o-animation: water 6s linear 0s infinite;	
+		}
+		.wave.wave2 {
+			animation: water 6s linear 2s infinite;
+			-moz-animation: water 6s linear 2s infinite;
+			-webkit-animation: water 6s linear 2s infinite;
+			-o-animation: water 6s linear 2s infinite;
+		}
+		.wave.wave3 {
+			animation: water 6s linear 4s infinite;
+			-moz-animation: water 6s linear 4s infinite;
+			-webkit-animation: water 6s linear 4s infinite;
+			-o-animation: water 6s linear 4s infinite;	
+		}
+		.mapPoint {
+			position: absolute;
+			width: 62px;
+			height: 90px;
+			top: 114px;
+			left: 740px;
+			background:url(../images/details/contact-address.png) no-repeat center;	
+		}
+		@keyframes water{
+			from{
+				width:0;
+				height:0;
+				margin-left:0;
+				margin-top:0;
+				opacity:.1;
+			}
+			to{
+				width:400px;
+				height:400px;
+				margin-left:-200px;
+				margin-top:-200px;
+				opacity:0;
+			}
+		}
+		@-moz-keyframes water{
+			from{
+				width:0;
+				height:0;
+				margin-left:0;
+				margin-top:0;
+				opacity:.1;
+			}
+			to{
+				width:400px;
+				height:400px;
+				margin-left:-200px;
+				margin-top:-200px;
+				opacity:0;
+			}
+		}
+		@-webkit-keyframes water{
+			from{
+				width:0;
+				height:0;
+				margin-left:0;
+				margin-top:0;
+				opacity:.1;
+			}
+			to{
+				width:400px;
+				height:400px;
+				margin-left:-200px;
+				margin-top:-200px;
+				opacity:0;
+			}
+		}
+		@-o-keyframes water{
+			from{
+				width:0;
+				height:0;
+				margin-left:0;
+				margin-top:0;
+				opacity:.1;
+			}
+			to{
+				width:400px;
+				height:400px;
+				margin-left:-200px;
+				margin-top:-200px;
+				opacity:0;
+			}
+		}
+	</style>            
 </body>
 </html>
