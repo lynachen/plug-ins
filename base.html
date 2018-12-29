@@ -19,6 +19,12 @@
 	    <div class="wave wave3"></div>
 	    <div class="mapPoint"></div>
 	</div>
+	<div class="transform">
+		<ul class="icons">
+			<li class="female"><a href="#"><i></i>女生</a></li>
+			<li class="arrow"><a href="#"><i></i>箭头</a></li>
+		</ul>
+	</div>
             
 	<style>
 		.mapCon {
@@ -129,6 +135,41 @@
 				opacity:0;
 			}
 		}
+		/*transform*/
+		ul { 
+			width: 145px; 
+			margin: 0 auto; 
+			list-style: none; 
+			font-size: 30px; 
+			}
+		li {padding:10px }
+		li a {
+			width:145px;
+			height:42px;
+			line-height:36px;
+			display:block;
+			color:#333;;
+		}
+		li a i { 
+			background: url(img/icon.png) no-repeat; 
+			display: block; 
+			width: 42px; 
+			height: 32px; 
+			position: relative; 
+			z-index: 10; 
+			float:left;
+			-webkit-transition: -webkit-transform 0.4s ease-out;
+			-moz-transition: -moz-transform 0.4s ease-out;
+			transition: transform 0.4s ease-out;
+		}
+		li a:hover i {
+			-webkit-transform: rotate(360deg);
+			-moz-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+		
+		li.female a i { background-position: 0 0; }
+		li.arrow a i { background-position: 0 -50px; }
 	</style>            
 </body>
 </html>
