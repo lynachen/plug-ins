@@ -147,24 +147,33 @@ a {
 	-ms-transition:all 0.2s ease-in-out;
 }
 
-/*----- 占位符样式 -----*/
-/*除了Firefox是 ::[prefix]placeholder，其他浏览器都是使用 ::[prefix]input-placeholder*/
+/*自定义placeholder*/
+/*----- WebKit -----*/
 input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-	color: #c7c7c7;
-}
+textarea::-webkit-input-placeholder {color: #c7c7c7;}
+/*----- IE10+ -----*/
 input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {  /*----- IE10+ -----*/
-	color: #c7c7c7;
-}
+textarea:-ms-input-placeholder {color: #c7c7c7;}
+/*----- Firefox4-18 -----*/
 input:-moz-placeholder,
-textarea:-moz-placeholder {  /*----- Firefox4-18 -----*/
-	color: #c7c7c7;
-}
+textarea:-moz-placeholder {color: #c7c7c7;}
+/*----- Firefox19+ -----*/
 input::-moz-placeholder,
-textarea::-moz-placeholder {  /*----- Firefox19+ -----*/
-	color: #c7c7c7;
-}
+textarea::-moz-placeholder {color: #c7c7c7;}
+			
+/*获取焦点清空placeholder*/
+/*----- WebKit -----*/
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+/*----- IE10+ -----*/
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder { color:transparent; }				
+/*----- Firefox4-18 -----*/
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder { color:transparent; }			
+/*----- Firefox19+ -----*/
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder { color:transparent; }
 input:focus,
 textarea:focus {
 	border:1px solid #6ec5a3;  /*----- 主色调颜色 -----*/
