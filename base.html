@@ -35,7 +35,23 @@
 	<br />
 	<h3>计时器：</h3>
 	<div class="timer" id="timer"></div>
-            
+    <br />
+	<hr />
+	<br />
+    <h3>三角形：</h3>
+	<p>向上</p>
+	<div class="to_top"></div>
+	<p>向左</p>
+	<div class="to_left"></div>
+	<p>向右</p>
+	<div class="to_right"></div>
+	<p>向下</p>
+	<div class="to_bottom"></div>
+	<br />
+	<hr />
+	<br />
+	<h3>箭头</h3>
+	<span class="arrow_left"></span>
 	<style>
 		body {
 			width: 1000px;
@@ -189,6 +205,49 @@
 		li.arrow a i { background-position: 0 -50px; }
 		/*timer*/
 		.timer {text-align: center;}
+		
+		/*箭头向上*/
+		.to_top {
+		    width: 0;
+		    height: 0;
+		    border-bottom: 10px solid #ccc;
+		    border-left: 10px solid transparent;
+		    border-right: 10px solid transparent;
+		}
+		/*箭头向下*/
+		.to_bottom {
+		    width: 0;
+		    height: 0;
+		    border-top: 10px solid #ccc;
+		    border-left: 10px solid transparent;
+		    border-right: 10px solid transparent;
+		}
+		/*箭头向左*/
+		.to_left {
+		    width: 0;
+		    height: 0;
+		    border-right: 10px solid #ccc;
+		    border-top: 10px solid transparent;
+		    border-bottom: 10px solid transparent;
+		}
+		/*箭头向右*/
+		.to_right {
+		    width: 0;
+		    height: 0;
+		    border-left: 10px solid #cccf;
+		    border-top: 10px solid transparent;
+		    border-bottom: 10px solid transparent;
+		}	
+		.arrow_left {
+			display: inline-block;
+		    border-top: 2px solid;
+		    border-right: 2px solid;
+		    width: 50px;
+		    height: 50px;
+		    border-color: #EA6000;
+		    transform: rotate(-135deg);
+		    margin: 50px auto auto 100px;
+		}	
 	</style> 
 	<script type="text/javascript">
 		var HH = 0;//时
