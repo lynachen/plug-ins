@@ -68,6 +68,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+/*清除浮动*/
 .clearfix:before,
 .clearfix:after {
   display: table;
@@ -136,7 +137,7 @@ input[type="password"] {
     background-color: #fff;
     border: 1px solid #eee;		
 }
-/*重新画checkbox*/
+/*美化checkbox和radio*/
 input[type="checkbox"],
 input[type="radio"] {
 	width: 20px;
@@ -184,10 +185,44 @@ textarea:focus:-moz-placeholder { color:transparent; }
 input:focus::-moz-placeholder,
 textarea:focus::-moz-placeholder { color:transparent; }
 
+/*----- 消除bootstrap默认样式 -----*/
+.container {
+	padding-left: 0;
+	padding-right: 0;
+	min-width: 1200px;
+}
+.row {
+	margin-right: 0;
+	margin-left: 0;
+}
+.btn {
+	padding:0;
+	line-height: normal;
+}
 ol,ul {
 	margin-bottom: 0;
 }
+.list-inline {
+	margin-left: 0;
+}
 
+.list-inline > li {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.table {margin-bottom: 0;}
+.table>tbody>tr>td, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>td, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>thead>tr>th {
+	padding:0;
+	vertical-align: middle;
+}
+
+label {margin-bottom: 0;font-weight: 500;}
 .bg-white {background-color: #fff;}    /*----- 白色背景 -----*/
 .bg-gray {background-color: #f5f5f5;}  /*----- 灰色背景 -----*/
 .bg-deep {background-color: #282d44;}  /*----- 深蓝色背景 -----*/
