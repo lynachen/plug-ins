@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function sum(arr) {
+			  	var s = 0;
+			  	for (var i=arr.length-1; i>=0; i--) {
+			    	s += arr[i];
+			  	}
+			  	return s;
+			}
+			console.log(sum([698,608]))
+		</script>
+		<script>
+			var text = '电话18612341234';
+			var RegExp = new RegExp(/((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))/ ,'g'); //匹配电话，以便能直接拨打
+			var newUrl = text.replace(RegExp,"<a class='tel' href='tel:$1'>$1</a>");
+			console.log(newUrl);  //电话<a class='tel' href='tel:18612341234'>18612341234</a>
+		</script>
+	</body>
+</html>

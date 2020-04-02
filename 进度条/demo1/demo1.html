@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery-circle-progress使用指南</title>
+<style>
+ 
+.f-ongoing{color:#f60}
+.f-complete{color:#090}
+.circle_step_box{width:1200px;margin:0 auto;}
+.circle_step{width:155px;height:auto;float:left;margin-left:54px;cursor:pointer;}
+.circle_step>div{width:155px;height:155px;position:relative;}
+.circle_step>div>strong{font-size:26px;color:#4697f2;position:absolute;top:60px;text-align:center;display:block;width:100%;left:0;}
+.circle_step>div>strong>i{font-size:18px;}
+.circle_step.active>div>strong{color:#feab11;}
+.circle_step>p{font-size:16px;width:130px;text-align:center;margin:0 auto;margin-top:20px;color:#4697f2;}
+.circle_step.active>p{color:#feab11;}
+.tabscontent.mainDiv{background:#4696ef;width:100%;margin-top:55px;}
+.oimg_nav_box{width:1200px;margin:0 auto;}
+#oimg_nav{display:block;width:77px;margin-left:40px;}
+</style>
+<script src="jquery-2.1.4/jquery.min.js"></script>
+<script src="circle-progress.js"></script>
+</head>
+ 
+<body style="background:#fff">
+<!--环形进度条-->
+<div class="circle_step_box">
+	<div class="circle_step" state='1' press_name='circle_step1' style="margin-left:0;">
+		<div id="circle_step1"><strong class="active"></strong></div>
+		<p class="active">11111</p>
+	</div>
+	<div class="circle_step" state='-1' press_name='circle_step2'>
+		<div id="circle_step2"><strong></strong></div>
+		<p>22222</p>
+	</div>
+	<div class="circle_step" state='-1' press_name='circle_step3'>
+		<div id="circle_step3"><strong></strong></div>
+		<p>33333</p>
+	</div>
+	<div class="circle_step" state='-1' press_name='circle_step4'>
+		<div id="circle_step4"><strong></strong></div>
+		<p>44444</p>
+	</div>
+	<div class="circle_step" state='-1' press_name='circle_step5'>
+		<div id="circle_step5"><strong></strong></div>
+		<p>55555</p>
+	</div>
+	<div class="circle_step" state='-1' press_name='circle_step6'>
+		<div id="circle_step6"><strong></strong></div>
+		<p>66666</p>
+	</div>
+	<h6 class="clear"></h6>
+</div>
+</body>
+<script>
+//初始化环形进度条
+function create_circle(num,val_num){
+	if(num==1){
+		$('#circle_step'+num).circleProgress({
+		    value: 0.98,//你需要展示的值，值从0.0到1.0，默认值为0
+		    size: 155,//环形图的大小，单位像素，默认值100
+		    startAngle:-1.57,//初始角度，默认值为-Math.PI
+		    reverse:false,//是否反向绘制圆弧和动画，默认值为false
+		    lineCap:'round',//圆弧的线头样式："butt"、"round"和"square"。默认值为"butt"
+		    thickness:20,//进度条圆弧的宽度。默认它自动为size的1/14大小，你可以设置你需要的值。默认值为auto
+		    emptyFill:'rgba(0, 0, 0, .1)',//空圆弧的颜色。默认值为"rgba(0, 0, 0, .1)"
+		    fill: {
+		    	//圆弧填充的配置。
+//				-{ color: "#ff1e41" }
+//				-{ color: 'rgba(255, 255, 255, .3)' }
+//				-{ gradient: ["red", "green", "blue"] }
+//				-{ gradient: [["red", .2], ["green", .3], ["blue", .8]] }
+//				-{ gradient: [ ... ], gradientAngle: Math.PI / 4 }
+//				-{ gradient: [ ... ], gradientDirection: [x0, y0, x1, y1] }
+//				-{ image: "http://i.imgur.com/pT0i89v.png" }
+//				-{ image: imageInstance }
+//				-{ color: "lime", image: "http://i.imgur.com/pT0i89v.png" }
+//				默认值为{ gradient: ["#3aeabb", "#fdd250"] }
+		        gradient: ["#fece00","#ffa101"]
+		    }
+		}).on('circle-animation-progress', function(event, progress,stepValue) {//当图像正在绘制时的监听事件
+		    $(this).find('strong').html(String((stepValue*100).toFixed(2)) + '<i>%</i>');
+		});
+	}else{
+		$('#circle_step'+num).circleProgress({
+		    value: val_num,
+		    size: 155,
+		    startAngle:-1.57,
+		    reverse:false,
+		    lineCap:'round',
+		    thickness:20,
+		    fill: {
+		        gradient: ["#46ccf2","#4696ef"]
+		    }
+		}).on('circle-animation-progress', function(event, progress,stepValue) {
+		    $(this).find('strong').html(String((stepValue*100).toFixed(2)) + '<i>%</i>');
+		});
+	}
+}
+create_circle(1,0.96);
+create_circle(2,0.75);
+create_circle(3,1);
+create_circle(4,0.96);
+create_circle(5,1);
+create_circle(6,1);
+//当鼠标点击环形进度条时
+//http://www.htmleaf.com/html5/html5-canvas/201505271918.html
+console.log(-Math.PI / 4 * 3);
+$('.circle_step').click(function(){
+	if($(this).attr('state')=='1'){
+		return false;
+	}
+	//将所有的状态归零
+	var old=$('.circle_step[state="1"]').attr('state','-1').attr('class','circle_step').attr('press_name');
+	$('#'+old).circleProgress({animation: false,fill: {  gradient: ["#46ccf2","#4696ef"]}});
+	//新激活的进度条
+	var press_name=$(this).attr('state','1').attr('class','circle_step active').attr('press_name');
+	$('#'+press_name).circleProgress({animation:true,fill: {  gradient: ["#fece00","#ffa101"]}});
+	//底部指针移动
+	//$('#oimg_nav').css('margin-left',40+(press_name.split('circle_step')[1]-1)*209);
+	//内容切换
+	$('.table_show').eq(press_name.split('circle_step')[1]-1).fadeIn().siblings().fadeOut();
+	//标题切换
+	var table_title_arr=['11111','22222','33333','44444','55555','66666'];
+	$('#table_title').html(table_title_arr[press_name.split('circle_step')[1]-1]);
+})
+//当鼠标进入环形进度条时
+$('.circle_step').mouseenter(function(){
+	if($(this).attr('state')=='1'){
+		return false;
+	}
+	var press_name=$(this).attr('class','circle_step active').attr('press_name');
+	$('#'+press_name).circleProgress({animation: false,fill: {  gradient: ["#fece00","#ffa101"]}});
+})
+//当鼠标离开环形进度条时
+$('.circle_step').mouseleave(function(){
+	if($(this).attr('state')=='1'){
+		return false;
+	}
+	var press_name=$(this).attr('class','circle_step').attr('press_name');
+	$('#'+press_name).circleProgress({animation: false,fill: {  gradient: ["#46ccf2","#4696ef"]}});
+})
+</script>
+</html>

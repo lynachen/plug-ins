@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920 -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>多种数值显示方式的jQuery圆形进度条插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="./多种数值显示方式的jQuery圆形进度条插件_DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库_files/normalize.css"><!--CSS RESET-->
+	<link rel="stylesheet" type="text/css" href="./多种数值显示方式的jQuery圆形进度条插件_DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库_files/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+	<link rel="stylesheet" href="./多种数值显示方式的jQuery圆形进度条插件_DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库_files/monokai-sublime.css">
+	<link rel="stylesheet" href="./多种数值显示方式的jQuery圆形进度条插件_DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库_files/style.css">
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>多种数值显示方式的jQuery圆形进度条插件 <span>Display Percentage/Progress Values As Gauges</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/jquery-tools/201907195740.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<div class="container">
+		<div class="about">
+			<h1>Circle Progress examples</h1>
+			<p>Each example is accompanied by JavaScript and CSS code. You can switch between plain JS and jQuery snippets.</p>
+		</div>
+
+		<div class="examples">
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-1" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="47" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 3 A 47 47 0 1 1 22.374093142253766 88.02379873562253"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em">60%</text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="60">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">6px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(39, 100%, 50%);
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">6px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(39, 100%, 85%);
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">fill</span>: <span class="hljs-built_in">hsl</span>(39, 100%, 50%);
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-2" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="47" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 3 A 47 47 0 1 1 22.374093142253766 88.02379873562253"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em"><tspan class="circle-progress-text-value">60</tspan><tspan class="circle-progress-text-separator">/</tspan><tspan class="circle-progress-text-max">100</tspan></text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="60">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">6px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(320, 80%, 60%);
+	<span class="hljs-attribute">stroke-dasharray</span>: <span class="hljs-number">4</span> <span class="hljs-number">1</span>;
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">6px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-number">#eee</span>;
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">font-weight</span>: bold;
+	<span class="hljs-attribute">fill</span>: <span class="hljs-built_in">hsl</span>(180, 80%, 47%);
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-3" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="47" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 3 A 47 47 0 1 1 22.374093142253766 88.02379873562253"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em"><tspan class="circle-progress-text-value">60</tspan><tspan class="circle-progress-text-separator">/</tspan><tspan class="circle-progress-text-max">100</tspan></text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="60">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">6px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(280, 90%, 50%);
+	<span class="hljs-attribute">stroke-linecap</span>: round;
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">2px</span>;
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-4" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="25" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 25 A 25 25 0 1 1 35.30536869268818 70.22542485937369"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em"><tspan class="circle-progress-text-value" x="50" dy="-0.2em">60</tspan><tspan class="circle-progress-text-separator" x="50" dy="0.1em" font-family="Arial, sans-serif">___</tspan><tspan class="circle-progress-text-max" x="50" dy="1.2em">100</tspan></text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="60">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'vertical'</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'vertical'</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">50px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(160, 63%, 55%);
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">50px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-number">#999</span>;
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">fill</span>: white;
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-5" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="46" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 4 A 46 46 0 1 1 22.96187839454624 87.21478174124758"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em"><tspan class="circle-progress-text-value" x="50" dy="-0.2em">60</tspan><tspan class="circle-progress-text-separator" x="50" dy="0.1em" font-family="Arial, sans-serif">___</tspan><tspan class="circle-progress-text-max" x="50" dy="1.2em">100</tspan></text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="60">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'vertical'</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'vertical'</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">6px</span>;
+	<span class="hljs-attribute">stroke</span>: white;
+	<span class="hljs-attribute">stroke-linecap</span>: round;
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">8px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-number">#888</span>;
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">fill</span>: <span class="hljs-number">#888</span>;
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-6" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="25" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 25 A 25 25 0 1 1 35.30536869268818 70.22542485937369"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em"><tspan class="circle-progress-text-value" x="50" dy="-0.2em">60</tspan><tspan class="circle-progress-text-separator" x="50" dy="0.1em" font-family="Arial, sans-serif">___</tspan><tspan class="circle-progress-text-max" x="50" dy="1.2em">100</tspan></text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="60">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'vertical'</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'vertical'</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">50px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(100, 90%, 70%);
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">40px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(100, 15%, 60%);
+	<span class="hljs-attribute">fill</span>: <span class="hljs-built_in">hsl</span>(100, 15%, 60%);
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">fill</span>: white;
+	<span class="hljs-attribute">font-weight</span>: bold;
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-7" role="progressbar" aria-valuemin="0" aria-valuemax="12" aria-valuenow="9"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="44.5" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 5.5 A 44.5 44.5 0 1 1 5.5 50.00000000000001"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em">9 dots</text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="9">value</label><label><input type="number" name="max" value="12">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">12</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">9</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, max</span>) </span>{<br>		<span class="hljs-keyword">return</span> value + <span class="hljs-string">' dots'</span>;<br>	},<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">12</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">9</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, max</span>) </span>{<br>		<span class="hljs-keyword">return</span> value + <span class="hljs-string">' dots'</span>;<br>	},<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">11px</span>;
+	<span class="hljs-attribute">stroke</span>: aqua;
+	<span class="hljs-attribute">stroke-dasharray</span>: <span class="hljs-number">0</span> <span class="hljs-number">23.3</span>;
+	<span class="hljs-attribute">stroke-linecap</span>: round;
+}
+<span class="hljs-selector-class">.progress</span><span class="hljs-selector-attr">[aria-valuenow="0"]</span> <span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">display</span>: none;
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke</span>: transparent;
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Gotham rounded"</span>;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">13px</span>;
+	<span class="hljs-attribute">fill</span>: fuchsia;
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-8" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="42" fill="none" stroke="#ddd" stroke-width="16"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="16" d="M 50 8 A 42 42 0 0 1 74.68698059628387 83.97871376374779"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em"><tspan x="89.94437368439645" y="37.02128623625221" class="circle-progress-text-value" font-size="12" fill="#fff">40</tspan><tspan x="50" y="50" class="circle-progress-text-max" font-size="22" font-weight="bold" fill="#ddd" dy="0.4em">100</tspan></text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="40">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">40</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'valueOnCircle'</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">40</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'valueOnCircle'</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs">
+
+</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-9" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="39" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 11 A 39 39 0 0 1 72.92362483940646 81.55166278062295"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em">40%</text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="40">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">40</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">40</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">12px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(210, 100%, 45%);
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke</span>: white;
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">22px</span>;
+	<span class="hljs-attribute">fill</span>: <span class="hljs-number">#666</span>;
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Georgia"</span>;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">13px</span>;
+	<span class="hljs-attribute">fill</span>: white;
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-10" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="49" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 1 A 49 49 0 1 1 3.3982307015374786 34.858167275627565"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em">80%</text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="80">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">80</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">80</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">2px</span>;
+	<span class="hljs-attribute">stroke</span>: aquamarine;
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-number">#ddd</span>;
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">2px</span>;
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Georgia"</span>;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">13px</span>;
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-11" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="47" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 3 A 47 47 0 1 1 27.35757731721939 91.1864139620616"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em">58%</text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="60">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">60</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">6px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(100, 100%, 60%);
+	<span class="hljs-attribute">stroke-dasharray</span>: <span class="hljs-number">0.6</span> <span class="hljs-number">3</span>;
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">6px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-number">#ddd</span>;
+	<span class="hljs-attribute">stroke-dasharray</span>: <span class="hljs-number">0.6</span> <span class="hljs-number">3</span>;
+	<span class="hljs-attribute">stroke-dashoffset</span>: <span class="hljs-number">1.6</span>;
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Gotham Rounded Light"</span>;
+	<span class="hljs-attribute">fill</span>: <span class="hljs-built_in">hsl</span>(100, 81%, 55%);
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">26px</span>;
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-12" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="44" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 6 A 44 44 0 1 1 6 50.00000000000001"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em">75%</text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="75">value</label><label><input type="number" name="max" value="100">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">75</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>	<span class="hljs-attr">startAngle</span>: <span class="hljs-number">-90</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">75</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'percent'</span>,<br>	<span class="hljs-attr">startAngle</span>: <span class="hljs-number">-90</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">12px</span>;
+	<span class="hljs-attribute">stroke</span>: darkmagenta;
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke</span>: white;
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">11px</span>;
+	<span class="hljs-attribute">fill</span>: <span class="hljs-number">#666</span>;
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Georgia"</span>;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">13px</span>;
+	<span class="hljs-attribute">fill</span>: white;
+}</code></pre>
+		</div>
+
+		<div class="example">
+			<div class="example-figure">
+				<div class="progress progress-13" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="3"><svg version="1.1" width="100" height="100" viewBox="0 0 100 100"><circle class="circle-progress-circle" cx="50" cy="50" r="37.5" fill="none" stroke="#ddd" stroke-width="8"></circle><path class="circle-progress-value" fill="none" stroke="#00E699" stroke-width="8" d="M 50 12.5 A 37.5 37.5 0 1 0 87.5 50.00000000000001"></path><text class="circle-progress-text" x="50" y="50" font="16px Arial, sans-serif" text-anchor="middle" fill="#999" dy="0.4em"><tspan class="circle-progress-text-value" x="50" dy="-0.2em">3</tspan><tspan class="circle-progress-text-separator" x="50" dy="0.1em" font-family="Arial, sans-serif">___</tspan><tspan class="circle-progress-text-max" x="50" dy="1.2em">4</tspan></text></svg></div>
+			<div class="controls"><label><input type="number" name="min" value="0">min</label><label><input type="number" name="value" value="3">value</label><label><input type="number" name="max" value="4">max</label></div></div>
+			<h3><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#vanilla" data-variant="vanilla">JS</a><span class="slash"> / </span><a class="select-variant" href="http://192.168.1.53:8020/%E8%BF%9B%E5%BA%A6%E6%9D%A1/201907198264/index.html?__hbt=1570867688920#jquery" data-variant="jquery">jQuery</a></h3>
+			<pre class="variant-vanilla"><code class="code js hljs javascript"><span class="hljs-keyword">new</span> CircleProgress(<span class="hljs-string">'.progress'</span>, {<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">4</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">3</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'vertical'</span>,<br>	<span class="hljs-attr">clockwise</span>: <span class="hljs-literal">false</span>,<br>	<span class="hljs-attr">animation</span>: <span class="hljs-string">'none'</span>,<br>});</code></pre>
+			<pre class="variant-jquery"><code class="code js hljs javascript">$(<span class="hljs-string">'.progress'</span>).circleProgress({<br>	<span class="hljs-attr">max</span>: <span class="hljs-number">4</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-number">3</span>,<br>	<span class="hljs-attr">textFormat</span>: <span class="hljs-string">'vertical'</span>,<br>	<span class="hljs-attr">clockwise</span>: <span class="hljs-literal">false</span>,<br>	<span class="hljs-attr">animation</span>: <span class="hljs-string">'none'</span>,<br>});</code></pre>
+			<h3>CSS</h3>
+			<pre><code class="code css hljs"><span class="hljs-selector-class">.circle-progress-value</span> {
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">25px</span>;
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(210, 100%, 45%);
+	<span class="hljs-attribute">stroke-dasharray</span>: <span class="hljs-number">58</span> <span class="hljs-number">1</span>;
+}
+<span class="hljs-selector-class">.circle-progress-circle</span> {
+	<span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">hsl</span>(210, 100%, 85%);
+	<span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">25px</span>;
+	<span class="hljs-attribute">fill</span>: <span class="hljs-built_in">hsl</span>(210, 100%, 85%);
+}
+<span class="hljs-selector-class">.circle-progress-text</span> {
+	<span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Gotham"</span>;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+	<span class="hljs-attribute">fill</span>: <span class="hljs-built_in">hsl</span>(210, 100%, 45%);
+}</code></pre>
+		</div>
+		</div><!-- .examples -->
+
+	</div><!-- .container -->
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/jQuery/Chart/201802074971.html">
+				  <img src="./多种数值显示方式的jQuery圆形进度条插件_DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库_files/1.jpg" width="300" alt="基于SVG的jquery圆形进度条插件ProgressCircle">
+				  <h3>基于SVG的jquery圆形进度条插件ProgressCircle</h3>
+				</a>
+				<a href="http://www.htmleaf.com/html5/html5-canvas/201705154511.html">
+				  <img src="./多种数值显示方式的jQuery圆形进度条插件_DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库_files/2.jpg" width="300" alt="HTML5圆形百分比进度条插件">
+				  <h3>HTML5圆形百分比进度条插件</h3>
+				</a>
+		</div>
+	</div>
+	
+	<!-- <script src="../lib/jquery-3.3.1.js"></script> -->
+	<!-- <script src="../lib/jquery.ui.widget.js"></script> -->
+	<script src="./多种数值显示方式的jQuery圆形进度条插件_DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库_files/highlight.pack.js.下载"></script>
+
+	<!-- <script src="../src/innersvg.js"></script>
+	<script src="../src/svgpaper.js"></script>
+	<script src="../src/animator.js"></script>
+	<script src="../src/circle-progress.js"></script> -->
+
+	<script src="./多种数值显示方式的jQuery圆形进度条插件_DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库_files/circle-progress.js.下载"></script>
+	<!-- <script src="//github.com/tigrr/circle-progress/raw/master/dist/circle-progress.js"></script> -->
+	<!-- <script src="../dist/jquery.circle-progress.js"></script> -->
+	<script src="./多种数值显示方式的jQuery圆形进度条插件_DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库_files/demo.js.下载"></script>
+
+</body></html>

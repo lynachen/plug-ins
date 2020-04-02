@@ -68,6 +68,13 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+table,
+table tr th, 
+table tr td { 
+    border: 1px solid #eee;
+    text-align: center;
+    padding:6px 4px;
+}
 /*清除浮动*/
 .clearfix:before,
 .clearfix:after {
@@ -79,26 +86,27 @@ table {
 }
 
 body {
+	font-size: 12px;
     color: #333;
     font-family: "Microsoft YaHei",PingFangSC-Regular,Verdana,Arial,Helvetica,sans-serif,"宋体";
-    font-size: 12px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  /*iOS专有属性：点击背景高亮*/
 }
 input, select, button {
 	font-family: "Microsoft YaHei",PingFangSC-Regular,Verdana,Arial,Helvetica,sans-serif,"宋体";
 }
 /*自定义滚动条*/
-::-webkit-scrollbar {
+::-webkit-scrollbar { /*滚动条整体样式*/
     width: 8px;
     height: 10px;
     background-color: transparent;
     box-shadow: inset 0 0 8px rgba(0,0,0,.2)
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {  /*滚动条里面轨道*/
     background-color: #f5f5f5
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
     background-color: #f5f5f5;
     border-radius: 100px
 }
@@ -115,8 +123,12 @@ input, select, button {
 input:focus, select:focus {outline: 0 !important;} 
 button::-moz-focus-inner,
 input::-moz-focus-inner {border-color:transparent!important;}
-
-
+/*----- 去掉自动填充的输入框颜色 -----*/
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inse
+}
 /*----- mobile -----*/
 html {-webkit-text-size-adjust: 100%;}
 a,button,input,optgroup,select,textarea {

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>rolldate demo</title>
+	<!-- bootstrap.css仅作为示例演示使用 -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+		h1 {
+			font-size: 30px;
+		}
+
+		.form-control[readonly] {
+			background: none;
+		}
+
+		@media(max-width: 414px) {
+			.form-control {
+				font-size: 12px;
+			}
+		}
+
+		@media(max-width: 360px) {
+			.form-control {
+				font-size: 10px;
+				padding: 0 5px;
+			}
+		}
+
+		@media(max-width: 320px) {
+			.col-xs-6 {
+				padding: 0 5px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="form-group clearfix">
+				<div class="col-xs-6">
+					<input readonly class="form-control" type="text" id="date-group1-1" placeholder="YYYY-MM-DD hh:mm:ss">
+				</div>
+				<div class="col-xs-6">
+					<input readonly class="form-control" type="text" id="date-group1-2" placeholder="YYYY-MM-DD hh:mm:ss">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group clearfix">
+				<div class="col-xs-6">
+					<input readonly class="form-control" type="text" id="date-group8-1" placeholder="不能小于当前的日期">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		//时间戳转字符串格式
+		Date.prototype.Format = function (fmt) { //author: meizz
+		    var o = {
+		        "M+": this.getMonth() + 1, //月份
+		        "d+": this.getDate(), //日
+		        "h+": this.getHours(), //小时
+		        "m+": this.getMinutes(), //分
+		        "s+": this.getSeconds(), //秒
+		        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+		        "S": this.getMilliseconds() //毫秒
+		    };
+		    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		    for (var k in o)
+		        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+		    return fmt;
+		}
+	</script>
+	<script>
+		window.onload = function() {			
+			var date = new Date();
+			var time = date.getTime() + 1*3600*1000;  //获取当前时间+1个小时（时间戳）
+			var myDate1 = new Date(time).Format("yyyy-MM-dd hh:mm:ss")  //转为字符串
+			var time2 = date.getTime() + 3*3600*1000;  //获取当前时间+3个小时（时间戳）
+			var myDate2 = new Date(time2).Format("yyyy-MM-dd hh:mm:ss")  //转为字符串
+//			document.getElementById('date-group1-1').value= myDate1
+//			document.getElementById('date-group1-2').value= myDate2
+			//开始时间
+			new Rolldate({
+				el: '#date-group1-1',
+				format: 'YYYY-MM-DD hh:mm:ss',
+				value: myDate1, //设置默认开始时间（当前时间推后一个小时）
+				confirm: function(date) { //点击确认
+					console.log(date)
+					var d = new Date();
+					console.log(d.getTime())
+					var	d1 = new Date(date.replace(/\-/g, "\/")),  //选中的时间
+					d2 = d.getTime() + 1*3600*1000;  //默认显示的开始时间
+					console.log('默认开始时间'+myDate1)
+					myDate1 = d1.Format("yyyy-MM-dd hh:mm:ss")
+					console.log('选中的开始时间'+myDate1)
+					myChooseDate2 = new Date(myDate1).getTime() + 2*3600*1000;
+					myChooseDate2 = new Date(myChooseDate2)
+					myDate2 = myChooseDate2.Format("yyyy-MM-dd hh:mm:ss")
+					document.getElementById('date-group1-2').value = myDate2
+					console.log('选择之后的结束时间'+myDate2)
+					if (d1 < d2) {
+						alert('不能小于当前时间');
+						return false;
+					}
+				}
+			})
+			
+			//结束时间
+			new Rolldate({
+				el: '#date-group1-2',
+				format: 'YYYY-MM-DD hh:mm:ss',
+				value:'2017-10-21', //设置默认开始时间（当前时间推后三个小时）
+				init: function() {
+					console.log(myDate2)
+					console.log(document.getElementById('date-group1-2').value)
+				},
+				confirm: function(date) { //点击确认
+					console.log(document.getElementById('date-group1-2').value)
+					var d = new Date();
+					var	d1 = new Date(date.replace(/\-/g, "\/")),  //选中的时间
+					d2 = document.getElementById('date-group1-2').value;  //默认显示的结束时间
+					console.log('默认结束时间'+myDate2)
+					myDate2 = d1.Format("yyyy-MM-dd hh:mm:ss")
+					console.log('选中的结束时间'+myDate2)
+					if (d1 < d2) {
+						alert('不能小于当前时间');
+						return false;
+					}
+				}
+			})
+			/* 回调函数
+			 * tips:	在vue及其他mvvm框架中使用时，在confirm中修改v-model绑定的数据即可
+			 */
+			new Rolldate({
+				el: '#date-group8-1',
+				format: 'YYYY-MM-DD',
+				beginYear: 2000,
+				endYear: 2100,
+				confirm: function(date) {
+					var d = new Date(),
+						d1 = new Date(date.replace(/\-/g, "\/")),
+						d2 = new Date(d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate()); //如果非'YYYY-MM-DD'格式，需要另做调整
+
+					if (d1 < d2) {
+						alert('不能小于当前的日期');
+						return false;
+					}
+				}
+			})
+		}
+	</script>
+<script type="text/javascript" src="rolldate.min.js"></script>
+</body>
+
+</html>

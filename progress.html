@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="content">
+			<div class="progress">
+				<span class="progress-bar" id="progressBar" style="width: 0%;"></span>
+			</div>
+			<span id="seconds">2</span>
+			<button id="button">按钮</button>	
+		</div>
+		
+		<style>
+			.content {
+				width: 600px;
+				margin: 50px auto;
+			}
+			.progress {
+				display: inline-block;
+				width: 200px;
+				height: 6px;
+				background-color: #eee;
+				border-radius: 10%;
+				position: relative;
+			}
+			.progress-bar {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				/*width: 40%;*/
+				max-width: 100%;
+				overflow: hidden;
+				background-color: #ff0000;
+			}
+		</style>
+		<script>
+			var button = document.getElementById('button');
+			button.onclick = function(){
+				document.getElementById('progressBar').style.Width = 0;
+				var seconds = document.getElementById('seconds').innerHTML;
+				console.log(seconds)
+				var per = 100/seconds;    
+				console.log(per) //增量
+				bartimer = setInterval(function(){
+					var progressBar = document.getElementById("progressBar");  
+					console.log(progressBar.style.width)
+				  	progressBar.style.width = parseInt(progressBar.style.width) + per/10 + "%"; 
+				  	console.log('width='+progressBar.style.width)
+				  	if(parseInt(progressBar.style.width).toFixed(0) >= 100){  
+				  		console.log('100%啦啦啦') 			     	
+						clearInterval(bartimer);
+				  	} 		
+				},100); //100毫秒走一次	  
+			}
+			
+			
+		</script>
+	</body>
+</html>
